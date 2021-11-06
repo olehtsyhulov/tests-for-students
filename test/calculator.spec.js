@@ -1,8 +1,7 @@
-
 describe('Calculator', () => {
     /**---------------------------With Faker------------------------------------------*/
     let fakeNum1, fakeNum2;
-    beforeEach(()=>{
+    beforeEach(() => {
         fakeNum1 = faker.random.number();
         fakeNum2 = faker.random.number();
     });
@@ -10,11 +9,11 @@ describe('Calculator', () => {
     describe('On Addition', () => {
 
         it('should sum two numbers with to equal', () => {
-            expect(add(fakeNum1, fakeNum2)).to.equal(fakeNum1+fakeNum2);
+            expect(add(fakeNum1, fakeNum2)).to.equal(fakeNum1 + fakeNum2);
         });
 
         it('should sum two numbers with equal', () => {
-            expect(add(fakeNum1, fakeNum2)).equal(fakeNum1+fakeNum2);
+            expect(add(fakeNum1, fakeNum2)).equal(fakeNum1 + fakeNum2);
         });
     })
 
@@ -46,20 +45,20 @@ describe('Calculator', () => {
     })
 })
 
-describe('On Sort Array', ()=>{
+describe('On Sort Array', () => {
     let array;
-    beforeEach(()=>{
+    beforeEach(() => {
         array = [faker.random.number(), faker.random.number(), faker.random.number()];
     });
 
-    it('should return empty array with incorrect input data',  ()=> {
+    it('should return empty array with incorrect input data', () => {
         expect(sortArray(faker.name.firstName())).to.be.empty();
     });
 
     it('should return sorted array', () => {
         const result = sortArray(array);
-        for (let count =0;count<result.length-1;count++) {
-            expect(result[count]<=result[count+1]).to.be.true;
+        for (let count = 0; count < result.length - 1; count++) {
+            expect(result[count] <= result[count + 1]).to.be.true;
         }
     });
 
